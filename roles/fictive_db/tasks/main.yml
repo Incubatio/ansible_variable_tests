@@ -1,0 +1,4 @@
+---
+- name: installing database service on some port
+  #debug: var=db_port
+  debug: msg="[ROLE] {{ inventory_hostname }} has value {{ db_port }}"

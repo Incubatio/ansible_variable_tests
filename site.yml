@@ -1,0 +1,27 @@
+---
+# This playbook deploys the whole application stack in this site.
+
+# Configure and deploy database servers.
+- hosts: webservers
+  remote_user: root
+  roles:
+  - fictive_db
+  tasks:
+  - debug: msg="[TASK] {{ inventory_hostname }} has value {{ db_port }}"
+  #  - debug: var=redis_port
+
+- hosts: apiservers
+  remote_user: root
+  roles:
+  - fictive_db
+  tasks:
+  - debug: msg="[TASK] {{ inventory_hostname }} has value {{ db_port }}"
+  #- debug: redis_port
+
+- hosts: gameservers
+  remote_user: root
+  roles:
+  - fictive_db
+  tasks:
+  - debug: msg="[TASK] {{ inventory_hostname }} has value {{ db_port }}"
+  #- debug: redis_port

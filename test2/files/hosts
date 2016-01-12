@@ -1,0 +1,4 @@
+# Host Database, to place in /etc/hosts
+
+192.168.56.2 a1.dev
+192.168.56.2 a2.dev
